@@ -45,6 +45,8 @@ class IMDb(object):
 
             if self.tmdb:
                 tmdb_data = self.tmdb.get_tmdb_from_imdb(imdb_id, 'movie')
+            else:
+                tmdb_data = []
 
             if tmdb_data and tmdb_data['release_date']:
                 date = datetime.datetime.strptime(tmdb_data['release_date'],
